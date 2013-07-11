@@ -1,0 +1,69 @@
+<tool id="assemblathon1_stats" name="Calculate Assemblathon1 statistics" version="r20110418" force_history_refresh="True">
+    <requirements>
+        <requirement type="package">assemblathon1</requirement>
+    </requirements>
+    <command interpreter="python">
+        assemblathon1_stats.py
+
+        ##Inputs
+        --assembly=$assembly
+        --limit=$limit
+        --n=$n
+        ##--csv=$csv
+        ##--graph=$graph
+
+        ##Output
+        --results=$results
+    </command>
+    <inputs>
+        <param name="assembly"
+               type="data"
+               format="input"
+               label="Assembly of contigs or scaffolds"/>
+        <param name="limit"
+               type="integer"
+               value="0"
+               label="Limit analysis to this first number of sequences"/>
+        <!--
+        <param name="csv"
+               type="select"
+               value="NO"
+               label="Produce a CSV output file of all results">
+            <option value="NO">NO</option>
+            <option value="YES">YES</option>
+        </param>
+        <param name="graph"
+               type="select"
+               value="NO"
+               label="Produce a CSV output file of NG(X) values (NG1 through to NG99), suitable for graphing">
+            <option value="NO">NO</option>
+            <option value="YES">YES</option>
+        </param>
+        -->
+        <param name="n"
+               type="integer"
+               value="0"
+               label="Specify how many consecutive N characters should be used to split scaffolds into contigs"/>
+    </inputs>
+    <outputs>
+        <!-- Deal with output formats dependent on input values -->
+        <data name="results"
+              format="txt"
+              label="assemblathon1.stats">
+        </data>
+    </outputs>
+    <!--<tests>-->
+    <!--<test>-->
+    <!--</test>-->
+    <!--</tests>-->
+    <help>
+**What it does**
+
+This script calculates the statistics which were used to assess the quality of
+assemblies in the Assemblathon1_ competition.
+
+.. _Assemblathon1: http://assemblathon.org/assemblathon1
+    </help>
+</tool>
+
+

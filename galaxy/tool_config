@@ -1,0 +1,4 @@
+  <label id="ngs_eval" text="NGS Evaluation Tools"/>
+  <section id="ngs_eval_stats" name="NGS: Statistics">
+    <tool file="assemblathon1/assemblathon_stats.xml"/>
+  </section>
